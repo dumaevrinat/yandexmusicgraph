@@ -33,7 +33,6 @@ class ProxyParser:
         except requests.exceptions.RequestException:
             return None
         else:
-            print('proxy ok')
             return proxy
 
     def _parse_proxies(self):
