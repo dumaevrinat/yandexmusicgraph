@@ -49,13 +49,13 @@ def create_graph():
         similar_ids = set(map(lambda similar: similar.get('id'), info.get('allSimilar')))
 
         if len(similar_ids & artist_ids) > 1:
-            dot.node(str(artist_id), str(artist_name), size=str(likes_count), genre=str(artist_genre))
+            dot.node(str(artist_id), str(artist_name), width=str(likes_count), height=str(likes_count), genre=str(artist_genre))
 
             for similar_id in similar_ids:
                 if similar_id in artist_ids:
                     dot.edge(str(artist_id), str(similar_id))
 
-    dot.save('yamusic_artists3.gv', 'dot_output')
+    dot.save('yamusic_artists_different_sizes.gv', 'dot_output')
 
 
 if __name__ == '__main__':
